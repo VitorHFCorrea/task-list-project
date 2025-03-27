@@ -5,6 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import TaskPage from "./pages/TaskPage.jsx";
 
+// router to manage multiple pages
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   },
 ]);
 
+// render the router provider
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />

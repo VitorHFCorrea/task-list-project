@@ -1,16 +1,15 @@
-import { ChevronRightIcon, X } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import Button from "./Button";
-import { CheckSquare, Square } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { ChevronRightIcon, X, CheckSquare, Square } from "lucide-react";
 
 function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //navigate hook to travel between pages
 
   function onSeeDetailsClick(task) {
-    const query = new URLSearchParams();
+    const query = new URLSearchParams(); //URLSearchParams to handle query strings
     query.set("title", task.title);
-    query.set("description", task.description);
-    navigate(`/task?${query.toString()}`);
+    query.set("description", task.description);//set the title and description in the query string
+    navigate(`/task?${query.toString()}`); //navigate to the task page with that query string
   }
 
   return (
@@ -24,7 +23,7 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
             <span
               className={`flex items-center gap-2 ${
                 task.isCompleted && "opacity-75 line-through"
-              }`}
+              }`} //line-through if the task is completed
             >
               {task.isCompleted ? <CheckSquare /> : <Square />}
               {task.title}
