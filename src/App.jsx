@@ -18,9 +18,9 @@ function App() {
 
   //change the task status
   function onTaskClick(taskId) {
-    const newTasks = tasks.map((task) => {
-      task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task;
-    });
+    const newTasks = tasks.map((task) => 
+      task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task
+    );
     setTasks(newTasks);
   }
 
